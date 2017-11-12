@@ -37,7 +37,7 @@ def custom_wordcloud(tempFileName, emphDictionary, maskFile, inputFile="", color
 	wordcloud = WordCloud(max_words=100, mask=mask, margin=10, random_state=3).generate(text)
 	plt.imshow(wordcloud.recolor(color_func=blue_color),interpolation="bilinear")
 	plt.axis("off")
-	plt.show()
+	plt.savefig(path.join(dir,"custom_wordcloud_output.png"),format="png")
  
-#wordList = {"Python" : 50, "Physics" : 6, "Data-analysis" : 25, "Creative" : 20, "Research" : 15, "Programming" : 8}
-#custom_wordcloud("test.txt", wordList, maskFile="star.png", inputFile="qualitywords.txt")
+wordList = {"Python" : 50, "Physics" : 6, "Data-analysis" : 25, "Creative" : 20, "Research" : 15, "Programming" : 8}
+custom_wordcloud("test.txt", wordList, maskFile="ball.png", inputFile="qualitywords.txt")
